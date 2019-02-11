@@ -1,0 +1,21 @@
+{% extends 'products/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+
+</head>
+{% block content %}
+<body>
+<ul>
+    {% for prod in pro %}
+        <a href="{% url 'update' prod.id %}">
+            <li>{{ prod.description }}</li>
+        </a>
+    {% endfor %}
+</ul>
+<a href="{% url 'create' %}"> Create New Product</a>
+</body>
+{% endblock %}
+</html>

@@ -1,0 +1,23 @@
+{% extends 'products/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>create</title>
+</head>
+{% block content %}
+    <body>
+    <h1>Create/Update Product</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if product %}
+    <a href="{% url 'delete' product.id %}">Delete Product</a>
+    {% endif %}
+    </body>
+{% endblock %}
+</html>
+
